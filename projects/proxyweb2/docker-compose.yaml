@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  proxy:
+    build: .
+    ports:
+      - '8080:80' 
+    volumes:
+      - ./nginx.conf:/etc/nginx/sites-enabled/default:ro
+  web:
+    image: httpd
+
